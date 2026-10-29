@@ -1,26 +1,25 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+:root { --background: #071013; --foreground: #dce8e7; --accent: #9ce86c; --accent-bright: #b6f58b; }
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-bright: var(--accent-bright);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--background); color: var(--foreground); font-family: Arial, Helvetica, sans-serif; }
+.nav-link { color: #94a3b8; font-size: .875rem; transition: color .2s; }
+.nav-link:hover, .nav-link:focus-visible { color: white; }
+.mobile-nav-link { border-radius: .5rem; padding: .75rem; color: #cbd5e1; }
+.mobile-nav-link:hover, .mobile-nav-link:focus-visible { background: #ffffff0d; color: white; }
+.eyebrow { color: var(--accent); font-size: .7rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+.section-title { margin-top: .75rem; font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 600; letter-spacing: -.04em; line-height: 1.1; color: white; }
+.terminal-card { border: 1px solid #ffffff17; border-radius: 1rem; background: linear-gradient(145deg, #132023, #0b1215); box-shadow: 0 24px 80px #00000040; }
+.glow { position: absolute; width: 20rem; height: 20rem; border-radius: 9999px; background: #9ce86c14; filter: blur(80px); pointer-events: none; }
+.field-label { display: grid; gap: .5rem; color: #cbd5e1; font-size: .875rem; font-weight: 500; }
+.field-input { min-height: 2.9rem; border: 1px solid #ffffff1a; border-radius: .6rem; background: #ffffff08; padding: 0 .8rem; color: white; outline: none; }
+.field-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px #9ce86c1f; }
